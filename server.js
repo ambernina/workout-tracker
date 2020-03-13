@@ -1,10 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
-
-const PORT = process.env.PORT || 3000;
-
-const Workout = require("./models/workoutmodel");
-require("./public/js/api");
+const path = require("path");
+const PORT = process.env.PORT || 5555;
+const db = require("./models/workout");
 
 const app = express();
 
@@ -13,21 +11,48 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workouts", {
 	useNewUrlParser: true,
 	useFindAndModify: false
 });
 
 // routes
-app.post("/submit", ({ body }, res) => {
-	Workout.create(body)
-		.then(dbWorkout => {
-			res.json(dbWorkout);
-		})
-		.catch(err => {
-			res.json(err);
-		});
+app.get("/", function(req, res) {
+	res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.get("/exercise", function(req, res) {
+	res.sendFile(path.join(__dirname, "./public/exercise.html"));
+});
+
+app.get("/stats", function(req, res) {
+	res.sendFile(path.join(__dirname, "./public/stats.html"));
+});
+
+app.post("/api/workouts", function(req, res) {
+	db.create(req.body).then(data => res.json(data));
+});
+
+app.get("/api/workouts", function(req, res) {
+	db.find().then(results => {
+		console.log(results[results.length - 1]);
+		res.json(results[results.length - 1]);
+	});
+});
+
+app.get("/api/workouts/range", function(req, res) {
+	db.find().then(data => {
+		console.log(data);
+		res.json(data);
+	});
+});
+
+app.put("/api/workouts/:id", function(req, res) {
+	console.log(req.body);
+	db.update(
+		{ _id: req.params.id },
+		{ $push: { exercises: req.body } }
+	).then(response => res.json(response));
 });
 
 app.listen(PORT, () => {
