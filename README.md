@@ -1,5 +1,8 @@
 # Workout Tracker
 
+## Deployed Link
+https://boiling-garden-18020.herokuapp.com/
+
 ## Description
 This is a full-stack web app for keeping track of your workouts. You can choose between Resistance and Cardio, add in details, and once the exercises have been added you will be able to view your workout stats. This app uses MongoDB and Chart.js.
 
@@ -13,6 +16,10 @@ Keeping track of your personal workouts over time. The charts show types of work
 
 ## Github Repo Link
 https://github.com/ambernina/workout-tracker
+
+## Credits
+
+I built all back-end code for this app, some help came from my tutor.
 
 ## License
 
