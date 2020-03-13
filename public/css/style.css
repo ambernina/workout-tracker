@@ -183,8 +183,8 @@ button {
 #toast.success {
 	opacity: 1;
 	right: 10px;
-	background-color: #2af598;
-	color: #08aeea;
+	background-color: rgba(8, 174, 234, 1);
+	color: rgba(34, 0, 34, 1);
 	transition: all 1.2s;
 }
 
@@ -245,8 +245,8 @@ button {
 
 #toast.success {
 	right: 10px;
-	background-color: #2af598;
-	color: #08aeea;
+	background-color: rgba(8, 174, 234, 1);
+	color: rgba(34, 0, 34, 1);
 	transition: all 0.5s;
 }
 .workout-type,
@@ -303,8 +303,8 @@ button {
 }
 
 #toast.success {
-	background-color: #2af598;
-	color: #08aeea;
+	background-color: rgba(8, 174, 234, 1);
+	color: rgba(34, 0, 34, 1);
 	animation-name: toast;
 	animation-duration: 2s;
 	animation-fill-mode: forwards;
@@ -359,8 +359,8 @@ form > button {
 }
 
 #toast.success {
-	background-color: #2af598;
-	color: #08aeea;
+	background-color: rgba(8, 174, 234, 1);
+	color: rgba(34, 0, 34, 1);
 }
 
 .prev-workout h3 {
