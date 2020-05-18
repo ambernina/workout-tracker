@@ -1,6 +1,6 @@
 # Workout Tracker
 
-![]()
+![](Screen Shot 2020-05-18 at 2.23.35 PM.png)
 
 ## Deployed Link
 https://boiling-garden-18020.herokuapp.com/
